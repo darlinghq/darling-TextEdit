@@ -2,8 +2,6 @@ project(TextEdit)
 
 add_compile_options(
 	-nostdinc
-	-Wl,-sectorder,__TEXT,__text,${CMAKE_CURRENT_SOURCE_DIR}/TextEdit.scatterload
-	-Wl,-e,start
 	-Wmost
 	-Wno-four-char-constants
 	-Wno-unknown-pragmas
@@ -26,3 +24,4 @@ add_darling_executable(TextEdit
 	FontNameTransformer.m
 	PrintingTextView.m
 )
+set_target_properties(TextEdit PROPERTIES LINK_FLAGS "-Wl,-sectorder,__TEXT,__text,${CMAKE_CURRENT_SOURCE_DIR}/TextEdit.scatterload -Wl,-e,start")
