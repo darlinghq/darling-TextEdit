@@ -1,5 +1,12 @@
 project(TextEdit)
 
+set(OpenGL_GL_PREFERENCE "GLVND")
+find_package(OpenGL REQUIRED)
+
+include_directories(
+	${OPENGL_INCLUDE_DIR}
+)
+
 add_compile_options(
 	-nostdinc
 	-Wmost
