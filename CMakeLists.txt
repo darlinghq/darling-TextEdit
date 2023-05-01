@@ -31,4 +31,7 @@ add_darling_executable(TextEdit
 	FontNameTransformer.m
 	PrintingTextView.m
 )
-set_target_properties(TextEdit PROPERTIES LINK_FLAGS "-Wl,-sectorder,__TEXT,__text,${CMAKE_CURRENT_SOURCE_DIR}/TextEdit.scatterload -Wl,-e,start" C_STANDARD 11)
+
+target_link_libraries(TextEdit AppKit)
+set_property(TARGET TextEdit APPEND_STRING PROPERTY LINK_FLAGS "-Wl,-sectorder -Wl,__TEXT -Wl,__text -Wl,${CMAKE_CURRENT_SOURCE_DIR}/TextEdit.scatterload")
+set_property(TARGET TextEdit PROPERTY C_STANDARD 11)
