@@ -47,7 +47,7 @@
  
  */
 
-#define TextEditErrorDomain @"com.apple.TextEdit"
+#define TextEditErrorDomain @"org.darlinghq.TextEdit"
 
 enum {
     TextEditSaveErrorConvertedDocument = 1,

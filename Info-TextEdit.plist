@@ -208,11 +208,11 @@
 	<key>CFBundleHelpBookFolder</key>
 	<string>TextEdit.help</string>
 	<key>CFBundleHelpBookName</key>
-	<string>com.apple.TextEdit.help</string>
+	<string>org.darlinghq.TextEdit.help</string>
 	<key>CFBundleIconFile</key>
 	<string>Edit.icns</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.apple.TextEdit</string>
+	<string>org.darlinghq.TextEdit</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
