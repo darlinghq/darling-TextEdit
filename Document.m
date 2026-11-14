@@ -1211,7 +1211,11 @@ In addition we overwrite this method as a way to tell that the document has been
     }
         
     // Set the text layout orientation for each page
-    if ((val = [[[self windowControllers] objectAtIndex:0] layoutOrientationSections])) [dict setObject:val forKey:NSTextLayoutSectionsAttribute];
+    NSArray *controllers = [self windowControllers];
+    // Before a window exists, retain the sections read into the document model.
+    // An existing controller's nil result instead means its layout is horizontal.
+    val = [controllers count] ? [[controllers objectAtIndex:0] layoutOrientationSections] : [self originalOrientationSections];
+    if (val) [dict setObject:val forKey:NSTextLayoutSectionsAttribute];
 
     // Set the document properties, generically, going through key value coding
     for (NSString *property in [self knownDocumentProperties]) {
